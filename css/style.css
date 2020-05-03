@@ -34,7 +34,8 @@ a {
 }
 
 .header {
-  background-image: url(../img/background/layer-10.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/background/layer-10.png);
   background-repeat: no-repeat;
   width: 100%;
   padding-top: 38px;
@@ -61,12 +62,36 @@ a {
 }
 
 .header__navigation-list-item-link {
+  position: relative;
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   color: rgb(255, 255, 255);
   text-align: left;
   text-decoration: none;
   text-transform: capitalize;
+}
+
+.header__navigation-list-item-link:hover {
+  color: rgb(255, 0, 0);
+}
+
+.header__navigation-list-item-link::after {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  border-bottom: 3px solid #ff0000;
+  width: 0;
+  opacity: 100%;
+  transition: all 0.3s linear;
+}
+.header__navigation-list-item-link:hover::after {
+  content: '';
+  display: block;
+  border-bottom: 3px solid #ff0000;
+  width: 100%;
+  opacity: 1;
 }
 
 .header__navigation-list-item:not(:last-child) {
