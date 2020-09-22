@@ -70,11 +70,13 @@ a {
   text-align: left;
   text-decoration: none;
   text-transform: capitalize;
+  transition: all 0.2s linear;
 }
 
 .header__navigation-list-item-link:hover,
 .header__navigation-list-item-link:focus {
   color: rgb(255, 0, 0);
+  transform: scale(6);
 }
 
 .header__navigation-list-item-link::after {
